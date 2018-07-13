@@ -1,14 +1,14 @@
 {
   "name": "authmagic-link-email-phone-bootstrap-theme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir ./static/scripts && cp ./node_modules/babel-polyfill/dist/polyfill.min.js ./static/scripts"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["auth", "authentication", "authorization", "openid", "oauth2", "bootstrap", "theme", "design"],
+  "author": "Oleksandr Knyga <oleksandrknyga@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.1.1"
