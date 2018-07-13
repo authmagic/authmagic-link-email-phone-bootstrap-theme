@@ -7,7 +7,7 @@ Check <a href="https://github.com/authmagic/authmagic-cli">authmagic-cli</a>.
 authmagic install authmagic-link-email-phone-bootstrap-theme
 ```
 
-Screens
+## Screens
 <img src="https://github.com/authmagic/authmagic/blob/master/docs/images/authmagic-link-email-phone-bootstrap-theme-start.png?raw=true" width="600px"/>
 <img src="https://github.com/authmagic/authmagic/blob/master/docs/images/authmagic-link-email-phone-bootstrap-theme-wait.png?raw=true" width="600px"/>
 <img src="https://github.com/authmagic/authmagic/blob/master/docs/images/authmagic-link-email-phone-bootstrap-theme-profile.png?raw=true" width="600px"/>
