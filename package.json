@@ -9,7 +9,7 @@
   },
   "keywords": ["auth", "authentication", "authorization", "openid", "oauth2", "bootstrap", "theme", "design"],
   "author": "Oleksandr Knyga <oleksandrknyga@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.1.1"
   },
