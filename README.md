@@ -1,3 +1,5 @@
+<img src="https://github.com/authmagic/authmagic/blob/master/docs/images/logo.png?raw=true" width="300px"/>
+
 # authmagic-link-email-phone-bootstrap-theme
 Basic theme for <a href="https://github.com/authmagic/authmagic-timerange-stateless-core">authmagic-timerange-stateless-core</a> and <a href="https://github.com/authmagic/authmagic-email-plugin">authmagic-email-plugin</a> built with bootstrap.
 
