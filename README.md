@@ -16,4 +16,4 @@ authmagic install authmagic-link-email-phone-bootstrap-theme
 
 Licence
 -----------
-authmagic-link-email-phone-bootstrap-theme [MIT licensed](./LICENSE).
+authmagic-link-email-phone-bootstrap-theme is [MIT licensed](./LICENSE).
