@@ -14,6 +14,7 @@ function getParameterByName(name, url) {
 
 (function (resp) {
   var eproof = getParameterByName('eproof');
+  var redirect = getParameterByName('redirect');
   var interval = setInterval(_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
     var res, _ref2, token, refreshToken;
 
@@ -50,7 +51,7 @@ function getParameterByName(name, url) {
 
             localStorage.setItem('token', token);
             localStorage.setItem('refreshToken', refreshToken);
-            location.href = '/profile.html';
+            location.href = redirect;
             _context.next = 16;
             break;
 

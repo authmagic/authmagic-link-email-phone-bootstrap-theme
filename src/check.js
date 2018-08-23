@@ -9,19 +9,19 @@ function getParameterByName(name, url) {
 }
 
 async function check(ekey) {
-      const response = await fetch('/token', {
-        body: JSON.stringify({ekey}),
-        mode: 'cors',
-        method: 'post',
-        headers: {
-          'content-type': 'application/json'
-        },
-      });
+  const response = await fetch('/token', {
+    body: JSON.stringify({ekey}),
+    mode: 'cors',
+    method: 'post',
+    headers: {
+      'content-type': 'application/json'
+    },
+  });
   if(response.status === 200) {
     const {token, refreshToken} = await response.json();
     localStorage.setItem('token', token);
-          localStorage.setItem('refreshToken', refreshToken);
-          location.href = '/profile.html';
+    localStorage.setItem('refreshToken', refreshToken);
+    location.href = '/profile.html';
   } else {
     document.getElementById('check').innerHTML = 'Key is invalid';
   }

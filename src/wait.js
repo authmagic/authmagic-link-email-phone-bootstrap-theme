@@ -10,6 +10,7 @@ function getParameterByName(name, url) {
 
 (function(resp) {
   const eproof = getParameterByName('eproof');
+  const redirect = getParameterByName('redirect');
   const interval = setInterval(async function() {
     const res = await fetch('/token', {
       body: JSON.stringify({eproof}),
@@ -25,7 +26,7 @@ function getParameterByName(name, url) {
       const { token, refreshToken } = await res.json();
       localStorage.setItem('token', token);
       localStorage.setItem('refreshToken', refreshToken);
-      location.href = '/profile.html';
+      location.href = redirect;
     } else {
       console.log('forbidden');
     }

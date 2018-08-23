@@ -1,6 +1,6 @@
 'use strict';
 
-document.getElementById('redirect-url').value = location.protocol + '//' + location.host + '/check.html';
+document.getElementById('redirect-url').value = getParameterByName('redirect') ? getParameterByName('redirect') : location.protocol + '//' + location.host + '/check.html';
 
 function getToken() {
   var emailElement = document.getElementById('email');
@@ -24,7 +24,7 @@ function getToken() {
   }).then(function (resp) {
     var eproof = resp.eproof;
 
-    location.href = '/wait.html?eproof=' + eproof;
+    location.href = '/wait.html?eproof=' + eproof + '&redirect=' + redirectUrl;
   });
 }
 
