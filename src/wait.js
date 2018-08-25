@@ -8,27 +8,29 @@ function getParameterByName(name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-(function(resp) {
+async function getToken() {
+  const codeElement = document.getElementById('code')
   const eproof = getParameterByName('eproof');
+  const securityKey = codeElement.value;
   const redirect = getParameterByName('redirect');
-  const interval = setInterval(async function() {
-    const res = await fetch('/token', {
-      body: JSON.stringify({eproof}),
-      mode: 'cors',
-      method: 'post',
-      headers: {
-        'content-type': 'application/json'
-      },
-    });
+  const res = await fetch('/token', {
+    body: JSON.stringify({eproof, securityKey}),
+    mode: 'cors',
+    method: 'post',
+    headers: {
+      'content-type': 'application/json'
+    },
+  });
 
-    if (res.status === 200) {
-      clearInterval(interval);
-      const { token, refreshToken } = await res.json();
-      localStorage.setItem('token', token);
-      localStorage.setItem('refreshToken', refreshToken);
-      location.href = redirect;
-    } else {
-      console.log('forbidden');
-    }
-  }, 1000);
-})();
+  if (res.status === 200) {
+    const { token, refreshToken } = await res.json();
+    localStorage.setItem('token', token);
+    localStorage.setItem('refreshToken', refreshToken);
+    location.href = redirect;
+  } else {
+    document.getElementById('code').className = codeElement.className.concat(` is-invalid`);
+    document.getElementById('go').className = document.getElementById('go').className.concat(` btn-danger`);
+  }
+}
+
+document.getElementById('go').onclick = getToken;

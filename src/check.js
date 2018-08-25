@@ -27,6 +27,9 @@ async function check(ekey) {
   }
 }
 
-const ekey = getParameterByName('ekey');
-
-check(ekey);
+if(localStorage.getItem('token') && !getParameterByName('ekey')) {
+  location.href = '/profile.html';
+} else {
+  const ekey = getParameterByName('ekey');
+  check(ekey);
+}
